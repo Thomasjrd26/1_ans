@@ -1,0 +1,268 @@
+/* Reset et variables CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #ff4b72;
+    --primary-light: #ff758c;
+    --bg-gradient: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+    --glass: rgba(255, 255, 255, 0.75);
+    --text: #2d3748;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Pluie de coeurs */
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    color: var(--primary);
+    font-size: 20px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-5vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(105vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Carte Principale Effet Verre Dépoli (Glassmorphism) */
+.card {
+    position: relative;
+    z-index: 1;
+    background: var(--glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* En-tête */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.badge {
+    background: rgba(255, 75, 114, 0.15);
+    color: var(--primary);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-top: 15px;
+    color: #1a202c;
+}
+
+.highlight {
+    font-family: 'Dancing Script', cursive;
+    color: var(--primary);
+    font-size: 3.5rem;
+}
+
+.subtitle {
+    color: #718096;
+    margin-top: 5px;
+    font-weight: 300;
+}
+
+/* Timer Section */
+.timer-section, .message-section, .gallery-section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #4a5568;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 40%;
+    height: 3px;
+    background: var(--primary);
+    margin: 5px auto 0;
+    border-radius: 2px;
+}
+
+.timer-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.timer-box {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    min-width: 110px;
+    transition: transform 0.3s ease;
+}
+
+.timer-box:hover {
+    transform: translateY(-5px);
+}
+
+.timer-box span {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.timer-box small {
+    color: #a0aec0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* Lettre d'amour */
+.love-letter {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: #2d3748;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 25px;
+    border-radius: 16px;
+    border-left: 4px solid var(--primary);
+}
+
+/* Galerie */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.photo-card {
+    background: white;
+    padding: 10px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: float 4s ease-in-out infinite alternate;
+    animation-delay: calc(var(--delay) * 0.5s);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-8px); }
+}
+
+.photo-card:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 12px 25px rgba(255, 75, 114, 0.2);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.photo-card span {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+/* Bouton interactif */
+.footer {
+    text-align: center;
+}
+
+.glow-btn {
+    background: linear-gradient(45deg, var(--primary), var(--primary-light));
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(255, 75, 114, 0.3);
+    transition: all 0.3s ease;
+}
+
+.glow-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(255, 75, 114, 0.5);
+}
+
+.hidden-message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hidden-message.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Adaptabilité mobile */
+@media (max-width: 600px) {
+    .card { padding: 20px; }
+    h1 { font-size: 1.8rem; }
+    .highlight { font-size: 2.5rem; }
+    .love-letter { font-size: 1.4rem; }
+}

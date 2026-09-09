@@ -2,10 +2,82 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Mon Site Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 An d'Amour - Caroline & Moi</title>
+    <!-- Police Google Fonts modern & romantique -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Bienvenue sur mon site !</h1>
-    <p>Page créée depuis VS Code et hébergée sur GitHub Pages.</p>
+
+    <!-- Conteneur pour la pluie de cœurs animée -->
+    <div id="hearts-container"></div>
+
+    <main class="card">
+        <header class="header">
+            <span class="badge">365 Jours Ensemble</span>
+            <h1>Un An d'Amour avec <span class="highlight">Caroline</span></h1>
+            <p class="subtitle">Chaque seconde à tes côtés est un vrai bonheur.</p>
+        </header>
+
+        <!-- Section Compteur -->
+        <section class="timer-section">
+            <h2>Notre Histoire en Chiffres</h2>
+            <div class="timer-grid">
+                <div class="timer-box">
+                    <span id="days">365</span>
+                    <small>Jours</small>
+                </div>
+                <div class="timer-box">
+                    <span id="hours">8760</span>
+                    <small>Heures</small>
+                </div>
+                <div class="timer-box">
+                    <span id="minutes">525600</span>
+                    <small>Minutes</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Mot Doux -->
+        <section class="message-section">
+            <h2>Mon Petit Mot Pour Toi</h2>
+            <p class="love-letter">
+                « Caroline, déjà un an que tu illumines mon quotidien. Merci pour ton sourire, tes rires, ta gentillesse et tous ces moments inoubliables. Ce n'est que le tout début de notre belle aventure ensemble. »
+            </p>
+        </section>
+
+        <!-- Section Galerie / Souvenirs -->
+        <section class="gallery-section">
+            <h2>Nos Souvenirs</h2>
+            <div class="gallery-grid">
+                <!-- Remplace les liens des images par tes propres photos plus tard -->
+                <div class="photo-card" style="--delay: 1">
+                    <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=500&q=80" alt="Souvenir 1">
+                    <span>Notre premier rendez-vous</span>
+                </div>
+                <div class="photo-card" style="--delay: 2">
+                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=500&q=80" alt="Souvenir 2">
+                    <span>Des rires inoubliables</span>
+                </div>
+                <div class="photo-card" style="--delay: 3">
+                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=500&q=80" alt="Souvenir 3">
+                    <span>Vers encore plein d'années...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bouton d'action interactif -->
+        <footer class="footer">
+            <button id="love-btn" class="glow-btn">Clique ici si tu m'aimes ❤️</button>
+            <div id="surprise-message" class="hidden-message">
+                Je t'aime encore plus fort chaque jour ! 🥰
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
