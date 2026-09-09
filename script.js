@@ -40,7 +40,7 @@ loveBtn.addEventListener('click', () => {
 // 3. Compteur d'amour en temps réel (Jours, Heures, Minutes, Secondes)
 
 // ⚠️ METS TA VRAIE DATE ICI : Année, Mois (0 pour Janvier, 1 pour Février...), Jour, Heures, Minutes
-const startDate = new Date(2025, 9, 18, 1, 0, 0); 
+const startDate = new Date(2025, 8, 18, 1, 0, 0); 
 
 function updateTimer() {
     const now = new Date();
