@@ -36,3 +36,31 @@ loveBtn.addEventListener('click', () => {
         setTimeout(createHeart, i * 50);
     }
 });
+
+// 3. Compteur d'amour en temps réel (Jours, Heures, Minutes, Secondes)
+
+// ⚠️ METS TA VRAIE DATE ICI : Année, Mois (0 pour Janvier, 1 pour Février...), Jour, Heures, Minutes
+const startDate = new Date(2025, 9, 18, 1, 0, 0); 
+
+function updateTimer() {
+    const now = new Date();
+    const difference = now - startDate; // Temps écoulé en ms
+
+    // Calculs du temps
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((difference / (1000 * 60)) % 60);
+    const seconds = Math.floor((difference / 1000) % 60);
+
+    // Mettre à jour le texte dans la page HTML
+    document.getElementById('days').innerText = days;
+    document.getElementById('hours').innerText = hours;
+    document.getElementById('minutes').innerText = minutes;
+    document.getElementById('seconds').innerText = seconds;
+}
+
+// Lancer le compteur tout de suite...
+updateTimer();
+
+// ...puis le mettre à jour automatiquement toutes les secondes (1000 ms)
+setInterval(updateTimer, 1000);
